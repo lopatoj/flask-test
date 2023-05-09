@@ -6,7 +6,6 @@ import random
 import numpy as np
 import torch.optim as optim
 import torch.nn as nn
-import torch.onnx as onnx
 import torchvision.models as models
 from natsort import natsorted
 from tensorboardX import SummaryWriter
