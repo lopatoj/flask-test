@@ -225,5 +225,9 @@ class ClockTimelapse(torch.utils.data.Dataset):
     minute = time % 60
     if hour == 12: hour = 0
     if minute == 60: minute = 0
+<<<<<<< HEAD
     return img, hour, minute
 
+=======
+    return img, hour, minute
+>>>>>>> e10a42736619f7545ae5d5ad01a6805b836943c3
