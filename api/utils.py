@@ -1,5 +1,4 @@
 import torch
-import torch.nn.functional as F
 from kornia.geometry.transform import warp_perspective
 import numpy as np
 

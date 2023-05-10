@@ -1,27 +1,13 @@
 import os
-import time
 import cv2
-import csv
 import torch
 import einops
 import ast
-from datetime import datetime
 import random
-from random import shuffle
 import pandas as pd
 import numpy as np
-import torch.optim as optim
-import torch.nn as nn
-import torch.nn.functional as F
-import torchvision.models as models
-from torch.utils.data import DataLoader
 from natsort import natsorted
-import matplotlib.pyplot as plt
-from scipy import ndimage
 from SynClock import gen_clock
-from tensorboardX import SummaryWriter
-from kornia.geometry.transform import warp_perspective
-from kornia.geometry.homography import find_homography_dlt
 from kornia.augmentation import RandomPerspective
 
 def get_iou(bb_det, gt):
