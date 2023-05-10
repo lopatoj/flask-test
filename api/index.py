@@ -17,7 +17,7 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
 	if request.method == 'POST':
-		bytes = request.files['image'].read()
+		bytes = request.get_data()
 
 		# PREPROCESSING
 		img = cv2.imdecode(np.frombuffer(bytes, np.uint8), -1)
@@ -56,7 +56,7 @@ def predict():
 			hours = output // 60
 			minutes = output % 60
 
-			return jsonify({'hours': hours, 'minutes': minutes, 'output': output})
+			return f"{hours}:{minutes:0>2}"
 	
 def warp(img, Minv_pred, sz=224):
 	device = 'cpu'
