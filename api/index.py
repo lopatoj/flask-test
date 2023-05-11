@@ -6,7 +6,7 @@ import torch.nn as nn
 import torchvision.models as models
 from kornia.geometry.transform import warp_perspective
 
-from flask import Flask, jsonify, request
+from flask import Flask, request
 
 app = Flask(__name__)
 
