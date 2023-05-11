@@ -30,13 +30,13 @@ def predict():
 		# MAIN MODEL
 		model = models.resnet50()
 		model.fc = nn.Linear(2048, 720)
-		model.load_state_dict(torch.load('./models/main.pth', map_location=torch.device('cpu')))
+		model.load_state_dict(torch.load('main.pth', map_location=torch.device('cpu')))
 		model.to('cpu')
 
 		# STN MODEL
 		model_stn = models.resnet50()
 		model_stn.fc = nn.Linear(2048, 8)
-		model_stn.load_state_dict(torch.load('./models/stn.pth', map_location=torch.device('cpu')))
+		model_stn.load_state_dict(torch.load('stn.pth', map_location=torch.device('cpu')))
 		model_stn.to('cpu')
 
 		with torch.no_grad():
@@ -66,4 +66,4 @@ def warp(img, Minv_pred, sz=224):
 	return img_
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(debug=False)
